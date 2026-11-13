@@ -70,4 +70,11 @@ exports.handler = async (event) => {
       const r2 = await fetch(`${FLODESK}/subscribers/${encodeURIComponent(subId)}/segments`, {
         method: 'POST', headers: headers(), body: JSON.stringify({ segment_ids: [segmentId] }),
       });
-      if (!r2.ok)
+      if (!r2.ok) console.error(`add to segment ${r2.status}: ${await r2.text()}`);
+    }
+    console.log(`"${formName}": ${email} -> ${segmentName || 'no segment'}`);
+  } catch (e) {
+    console.error('Flodesk push failed:', e.message);
+  }
+  return { statusCode: 200 };
+};
