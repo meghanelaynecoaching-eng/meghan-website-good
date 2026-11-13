@@ -1,9 +1,11 @@
 // Netlify runs this automatically every time a site form is submitted.
 // It adds the person to the matching Flodesk segment.
 // Netlify environment variable needed: FLODESK_API_KEY
+// (Flodesk > profile icon > Integrations > API Keys)
 
 const FLODESK = 'https://api.flodesk.com/v1';
 
+// Find Your Fit routes by the "support" answer, per the funnel brief.
 const SUPPORT_TO_SEGMENT = {
   '1:1 Private Coaching': 'Inquiry: Private Coaching',
   'Nutrition Strategy Call': 'Inquiry: Nutrition Strategy Call',
@@ -52,23 +54,20 @@ exports.handler = async (event) => {
       firstName = parts.shift(); lastName = parts.join(' ');
     }
     const segmentName = (formName === 'Inquiry - Find Your Fit' && SUPPORT_TO_SEGMENT[clean(data.support)]) || clean(data.segment);
-    const segmentId = segmentName ? await findSegmentId(segmentName) : null;
+    if (!segmentName) { console.log(`"${formName}": no segment, email only, skipped Flodesk`); return { statusCode: 200 }; }
+    const segmentId = await findSegmentId(segmentName);
     if (segmentName && !segmentId) console.error(`No Flodesk segment named "${segmentName}". Saved ${email} without a segment.`);
 
     const sub = { email, first_name: firstName || undefined, last_name: lastName || undefined };
     if (segmentId) sub.segment_ids = [segmentId];
     const r = await fetch(`${FLODESK}/subscribers`, { method: 'POST', headers: headers(), body: JSON.stringify(sub) });
     if (!r.ok) throw new Error(`subscriber ${r.status}: ${await r.text()}`);
+    const created = await r.json().catch(() => ({}));
+    const subId = created.id || email;
+    console.log(`Flodesk subscriber ${subId} status: ${created.status || 'unknown'}, segments: ${(created.segments || []).map((s) => s.name).join(', ') || 'none'}`);
 
-    if (segmentId) {
-      const r2 = await fetch(`${FLODESK}/subscribers/${encodeURIComponent(email)}/segments`, {
+    if (segmentId) { // existing subscribers: make sure they join the segment
+      const r2 = await fetch(`${FLODESK}/subscribers/${encodeURIComponent(subId)}/segments`, {
         method: 'POST', headers: headers(), body: JSON.stringify({ segment_ids: [segmentId] }),
       });
-      if (!r2.ok) console.error(`add to segment ${r2.status}: ${await r2.text()}`);
-    }
-    console.log(`"${formName}": ${email} -> ${segmentName || 'no segment'}`);
-  } catch (e) {
-    console.error('Flodesk push failed:', e.message);
-  }
-  return { statusCode: 200 };
-};
+      if (!r2.ok)
