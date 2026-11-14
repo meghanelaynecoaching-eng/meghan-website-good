@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Terms · Meghan Elayne Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#161412;--charcoal:#1c1a17;--cream:#ffffff;--cream-deep:#f5f3ee;--ink:#2a2722;--ink-soft:#4a463f;--orange:#c06a2c;--orange-light:#cf7d3a;--line:rgba(42,39,34,.16);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 56px;}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 56px;max-width:1280px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+  .brand-mono{width:34px;height:34px;flex:none;border:1.5px solid var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:15px;line-height:1;color:var(--ink);}
+  .brand-mono em{font-style:italic;color:var(--orange);}
+  .brand-name{font-family:'Playfair Display',serif;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--ink);line-height:1;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;color:var(--ink);}
+  .nav-links a.cta{background:var(--ink);color:#fff;border:1px solid var(--ink);padding:10px 22px;}.nav-links a.cta:hover{background:var(--ink);color:#fff;}
+  .nav-burger{display:none;background:none;border:none;font-size:26px;line-height:1;color:var(--ink);cursor:pointer;padding:4px 6px;}
+
+  /* HEADER */
+  .pp-head{background:var(--black);color:#fff;text-align:center;padding:104px 24px 84px;}
+  .pp-head .eyebrow{text-transform:uppercase;letter-spacing:.34em;font-size:13px;font-weight:600;color:var(--orange-light);margin-bottom:18px;}
+  .pp-head h1{font-family:'Playfair Display',serif;font-weight:500;font-size:58px;line-height:1.05;}
+  .pp-head .updated{margin-top:18px;font-style:italic;font-size:17px;color:rgba(233,229,218,.7);}
+
+  /* BODY */
+  .pp-body{max-width:760px;margin:0 auto;padding:80px 24px 110px;}
+  .pp-note{background:var(--cream-deep);border-left:3px solid var(--orange);padding:20px 24px;font-size:17px;line-height:1.6;color:var(--ink-soft);margin-bottom:48px;}
+  .pp-body h2{font-family:'Playfair Display',serif;font-weight:500;font-size:27px;line-height:1.2;margin:44px 0 14px;color:var(--ink);}
+  .pp-body h2:first-of-type{margin-top:0;}
+  .pp-body p{font-size:18px;line-height:1.72;color:var(--ink-soft);margin-bottom:16px;}
+  .pp-body ul{list-style:none;margin:0 0 16px;}
+  .pp-body li{position:relative;padding:7px 0 7px 24px;font-size:18px;line-height:1.6;color:var(--ink-soft);}
+  .pp-body li:before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .pp-body strong{color:var(--ink);}
+  .pp-body a{color:var(--orange);}
+
+  /* FOOTER */
+  footer{background:var(--black);color:var(--cream);padding:84px 0 46px;text-align:center;}
+  .foot-logo{font-family:'Playfair Display',serif;text-decoration:none;color:var(--cream);display:inline-block;line-height:1;}
+  .foot-logo .meg{text-transform:uppercase;letter-spacing:.14em;font-size:30px;}
+  .foot-logo .el{font-style:italic;font-size:32px;color:var(--orange-light);margin-left:.18em;}
+  .foot-tag{margin:20px auto 0;max-width:480px;color:rgba(233,229,218,.72);font-size:19px;line-height:1.6;font-style:italic;font-family:'Playfair Display',serif;padding:0 24px;}
+  .foot-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 32px;margin:36px 0 0;padding:0 20px;}
+  .foot-nav a{color:rgba(233,229,218,.82);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;transition:.2s;}
+  .foot-nav a:hover{color:var(--orange-light);}
+  .foot-divider{width:60px;height:1px;background:rgba(233,229,218,.2);margin:42px auto;}
+  .foot-copy{margin-top:30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(233,229,218,.5);}
+
+  @media(max-width:900px){.nav-burger{display:block;}.nav-inner{position:relative;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;align-items:stretch;padding:6px 0;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.08);}.nav-links.open{display:flex;}.nav-links a{padding:13px 26px;width:100%;}.nav-links a.cta{border:none;padding:13px 26px;}.nav-inner{padding:18px 26px;}.pp-head h1{font-size:40px;}.brand-name{font-size:12px;letter-spacing:.1em;}}
+
+  @media(max-width:760px){
+    .pp-head h1{font-size:38px;}
+    .pp-head{padding:56px 24px;}.pp-body{padding:56px 22px;}
+    .wrap{padding:0 22px;}
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .promo-bar{display:block;background:var(--orange);overflow:hidden;text-decoration:none;}
+  .promo-track{display:flex;width:max-content;animation:promo-scroll 32s linear infinite;}
+  .promo-track .u{flex:none;padding:10px 0;color:#fff;font-family:'Cormorant Garamond',serif;font-size:13px;text-transform:uppercase;letter-spacing:.22em;font-weight:600;white-space:nowrap;}
+  .promo-track .u i{font-style:normal;opacity:.6;margin:0 22px;}
+  .promo-bar:hover .promo-track{animation-play-state:paused;}
+  @keyframes promo-scroll{to{transform:translateX(-50%);}}
+  .pp-body h3{font-family:'Playfair Display',serif;font-weight:500;font-size:20px;margin:26px 0 10px;color:var(--ink);}
+  .pp-table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:17px;}
+  .pp-table th,.pp-table td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--ink-soft);line-height:1.55;}
+  .pp-table th{font-family:'Playfair Display',serif;font-weight:500;color:var(--ink);background:var(--cream-deep);}
+  .pp-table td:first-child{white-space:nowrap;font-weight:600;color:var(--ink);}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<section class="pp-head">
+  <div class="eyebrow">The Embodied Method</div>
+  <h1>Membership Terms</h1>
+  <div class="updated">Cancellation, Refund and Pause Policy · Last updated: November 11, 2026</div>
+</section>
+
+<!-- BODY -->
+<div class="pp-body">
+
+  <p>The Embodied Method is a monthly coaching membership offered by Meghan Elayne Coaching ("I", "me", "my"). By joining, you agree to the terms below. I have written them in plain language so you know exactly what to expect before you join.</p>
+
+  <h2>1. What is included in your membership</h2>
+  <p>Your monthly membership includes the following, and only the following:</p>
+  <ul>
+    <li><strong>Monthly training program.</strong> A new 4-day-per-week strength training block each month, delivered through the TrainHeroic app. There are two tracks: the Foundation Track (dumbbells and bodyweight) and the Build Track (full gym, including barbell lifts). You are placed on a track at onboarding based on your intake form, and I may move you between tracks as you progress. Sessions include coaching cues and demo videos for key movements. Should you need modifications, you need only ask.</li>
+    <li><strong>Nutrition Foundations Guide.</strong> My evidence-based nutrition reference covers energy balance, protein, carbohydrates and fats, hunger and hormones, the menstrual cycle, gut health, sleep, stress, daily movement, and supplementation. Yours from day one.</li>
+    <li><strong>Biweekly content drops.</strong> Two educational resources per month (in Weeks 2 and 4), in the form of PDFs, guides, or worksheets. Topics vary across nutrition, training, and mindset.</li>
+    <li><strong>Weekly inner work coaching.</strong> A mindset voice note or short video each week (about 5 to 8 minutes), plus a weekly ritual and journal prompt posted in the community every Monday. The Monthly Ritual and Reflection Workbook is included.</li>
+    <li><strong>Two live group coaching calls per month (The Embodied Circle).</strong> Each call runs approximately 60 minutes and includes a wins and learnings share, an education segment, hot seat coaching, and intention setting with an accountability partner assigned for the next two weeks. You can submit hot seat questions in advance or ask live. Hot seat time is limited, so a spot on any one call is not guaranteed. Replays are posted in Skool within 24 hours.</li>
+    <li><strong>Private Skool community.</strong> Access to the community and the member library (content drops, call replays, and resources). I am active in the community most days, responding to posts and reviewing training logs.</li>
+    <li><strong>Personalised onboarding.</strong> An intake form, track placement, a personal welcome message, and a welcome email sequence.</li>
+    <li><strong>Founding member bonus (founding members only).</strong> One complimentary 1:1 call with me, to be scheduled while your membership is active. It has no cash value, is not transferable, and is not redeemable for anything else.</li>
+  </ul>
+  <h3>What is not included</h3>
+  <p>Individualised 1:1 coaching or custom programming (outside the founding member call), individualised meal plans or macro prescriptions, and medical advice, diagnosis, or treatment of any kind.</p>
+
+  <h2>2. Pricing and billing</h2>
+  <ul>
+    <li><strong>Founding member rate: $197 per month.</strong> Available to anyone who joins on or before December 31, 2026, or until all 20 founding spots are filled. You keep this rate for as long as your membership stays continuously active, including during an approved pause.</li>
+    <li><strong>Regular rate: $249 per month</strong> for members who join from January 1, 2027 through March 31, 2027. Pricing for members who join after March 31, 2027 will be reviewed and shown at checkout. The price you see at checkout is the price you pay.</li>
+    <li><strong>Billing.</strong> Your membership is a recurring subscription. Your card is charged automatically through Stripe on the same date each month, in advance.</li>
+    <li><strong>Price changes.</strong> If I ever change the price of an existing regular membership, I will give you at least 30 days' written notice.</li>
+  </ul>
+
+  <h2>3. Cancellation policy</h2>
+  <p>You can cancel at any time with 30 days' notice.</p>
+  <ul>
+    <li>To cancel, email me at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a> at least 30 days before the date you want your membership to end.</li>
+    <li>You keep full access until the end of your 30-day notice period, and you will be billed for any payment date that falls within it.</li>
+    <li>No further payments will be taken after your membership ends.</li>
+  </ul>
+
+  <h2>4. Refund policy</h2>
+  <p>All payments are final and non-refundable. This includes partial months, unused time, and calls or content you did not attend or use. Please only join if you are comfortable with this.</p>
+  <p>The one exception is a billing error on my side, such as a duplicate charge or an incorrect amount. If that happens, I will correct it.</p>
+
+  <h2>5. Pausing your membership</h2>
+  <p>Life happens, and I would rather you pause than leave. You can pause your membership for up to 60 days.</p>
+  <ul>
+    <li>Email me at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a> before your next billing date to request a pause.</li>
+    <li>You are not billed while paused. Your access to Skool, TrainHeroic, and live calls is paused as well.</li>
+    <li>Your founding member rate is protected during a pause. A pause is not a cancellation.</li>
+    <li>You can return early by letting me know. If you do not, your membership resumes automatically at the end of 60 days and billing restarts at your current rate.</li>
+    <li>You can cancel during a pause at any time, and no further payments will be taken.</li>
+    <li>A pause cannot be requested during a cancellation notice period or while a payment is outstanding. One pause is available per 12 months.</li>
+  </ul>
+
+  <h2>6. Cancelling and rejoining</h2>
+  <p>If you cancel and later decide to rejoin, you will pay the current price at the time you rejoin. The founding member rate does not carry over once a membership has ended. The same applies if your membership is removed for failed payment. A pause does not count as a cancellation.</p>
+
+  <h2>7. Failed payments</h2>
+  <p>If a payment fails, I will give you 30 days to resolve it before your membership is removed. Here is how that works:</p>
+  <table class="pp-table">
+    <tr><th>When</th><th>What happens</th></tr>
+    <tr><td>Day 1</td><td>Your payment fails. The system retries automatically and you receive an email asking you to update your payment details.</td></tr>
+    <tr><td>Days 3 and 7</td><td>Further automatic retries and a reminder email.</td></tr>
+    <tr><td>Day 14</td><td>A personal message from me checking in.</td></tr>
+    <tr><td>Day 21</td><td>A final reminder that your membership will be removed on Day 30.</td></tr>
+    <tr><td>Day 30</td><td>If payment has not been resolved, your membership is removed and you lose access to Skool and TrainHeroic. To return, you can rejoin at the current price.</td></tr>
+  </table>
+
+  <h2>8. Important to know</h2>
+  <ul>
+    <li><strong>Health.</strong> The Embodied Method is educational and coaching content. It is not medical advice. Please speak with your doctor before starting any training or nutrition program, especially if you have a medical condition, injury, or are pregnant or postpartum.</li>
+    <li><strong>Results.</strong> Individual results vary and are not guaranteed.</li>
+    <li><strong>Personal use.</strong> Your membership and all content are for your personal use only. Please do not share, copy, or redistribute program content, recordings, or your login.</li>
+    <li><strong>Community.</strong> I may remove a member from the community if their conduct is disrespectful or harmful to others. Removal for conduct is not eligible for a refund.</li>
+  </ul>
+
+  <h2>9. Questions</h2>
+  <p>If anything here is unclear, email me at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a> before you join. I am always happy to answer.</p>
+
+</div>
+
+
+</body>
+</html>
